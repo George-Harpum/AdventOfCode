@@ -4,7 +4,7 @@ Part 1
 """
 
 PART = 1
-FILE_LOC = "../inputs/day1.txt"
+FILE_LOC = "./inputs/day1.txt"
 
 import re
 
