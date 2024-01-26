@@ -3,7 +3,6 @@ Day 1
 Part 1
 """
 
-PART = 1
 FILE_LOC = "./inputs/day1.txt"
 
 import re
@@ -28,10 +27,11 @@ def part2(content):
     return sum(digits)
 
 if __name__ == "__main__":
-    if PART not in (1, 2):
+    PART = input("Which part?")
+    if PART not in ('1', '2'):
         raise ValueError("Part must be 1 or 2")
     file = open(FILE_LOC, 'r')
-    if PART == 1:
+    if PART == '1':
         out = part1(file)
     else:
         out = part2(file)
