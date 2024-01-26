@@ -1,6 +1,8 @@
 """
 Day 1
 Part 1
+
+There's a bug in part2, but I'm away this weekend so won't fix it
 """
 
 FILE_LOC = "./inputs/day1.txt"
@@ -17,9 +19,9 @@ def part1(content):
 
 def part2(content):
     digits = []
-    num_as_word = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
-    num_dict = dict(zip(num_as_word, [str(x) for x in range(10)]))
-    pattern = re.compile("|".join(num_as_word)+"[0-9]")
+    num_as_word = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+    num_dict = dict(zip(num_as_word, [str(x) for x in range(0, 10)]))
+    pattern = re.compile("|".join(num_as_word)+"|[0-9]")
     for line in content:
         find = pattern.findall(line)
         res = list(map(lambda x: num_dict.get(x, x), find))
