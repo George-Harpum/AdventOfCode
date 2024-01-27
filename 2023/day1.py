@@ -1,8 +1,19 @@
 """
 Day 1
 Part 1
+Problem statement
+A document consists of lines of text.
+On each line, find the first digit and the last digit (in that order) to form a single two-digit number.
+e.g.
+abc1def2ghi3 -> 13
+123456 -> 16
+one2three -> 22
 
-There's a bug in part2, but I'm away this weekend so won't fix it
+Part 2
+Include both numbers as digits (e.g. 1, 2) and as words (one, two)
+e.g.
+one2three -> 13
+eightwone -> 81  # This is the overlapping case.
 """
 
 FILE_LOC = "./inputs/day1.txt"
@@ -28,7 +39,7 @@ def part2(content):
         total += int(res[0]+res[-1])
     return total
 
-if __name__ == "__main__":
+def main():
     part = input("Which part?")
     if part not in ('1', '2'):
         raise ValueError("Part must be 1 or 2")
@@ -39,4 +50,8 @@ if __name__ == "__main__":
         out = part2(file)
     file.close()
     print(out)
+
+
+if __name__ == "__main__":
+    main()
 
