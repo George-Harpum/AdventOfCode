@@ -56,15 +56,19 @@ def part2():
 
 def main():
     part = input("Which part?")
-    if part not in '12':
-        raise ValueError("Part must be 1 or 2")
-    file = open(FILE_LOC, 'r')
-    if part == '1':
-        out = part1(file)
-    else:
-        out = part2(file)
-    file.close()
-    print(out)
+    try:
+        with open(FILE_LOC, 'r') as file:
+            match part:
+                case '1':
+                    out = part1(file)
+                case '2':
+                    out = part2(file)
+                case _:
+                    raise ValueError("Value must be 1 or 2")
+            print(out) 
+    except FileNotFoundError:
+        print("The file doesn't exist")
+        exit(1)
 
 if __name__ == "__main__":
     main()
