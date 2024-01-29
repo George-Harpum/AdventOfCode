@@ -2,6 +2,8 @@
 day 3
 
 """
+FILE_LOC = ".\inputs\day3.txt"
+
 
 def part1(content):
   raise NotImplementedError
