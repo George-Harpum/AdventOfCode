@@ -50,9 +50,19 @@ def part1(content, rMax=12, gMax=13, bMax=14):
     return total
 
 
-def part2():
-    raise NotImplementedError
-
+def part2(content):
+    import re
+    total = 0
+    template = "([1-9]|[1-9][0-9]) (?={})"
+    reRed = re.compile(template.format("red"))
+    reBlue = re.compile(template.format("blue"))
+    reGreen = re.compile(template.format("green"))
+    for line in content:
+        red = max(map(int, reRed.findall(line)))
+        blue = max(map(int, reBlue.findall(line)))
+        green = max(map(int, reGreen.findall(line)))
+        total += red*blue*green
+    return total
 
 def main():
     part = input("Which part?")
