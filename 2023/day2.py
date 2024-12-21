@@ -15,7 +15,7 @@ Multiply those numbers together and sum that result for each game
 e.g. a game requiring 2 red, 3 blue, and 4 green has a 'power' of 24. 
 """
 
-FILE_LOC = ".\inputs\day2.txt"
+FILE_LOC = "./inputs/day2.txt"
 
 
 def test_max(string, red_max, green_max, blue_max):

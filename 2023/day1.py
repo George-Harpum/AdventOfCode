@@ -16,7 +16,7 @@ one2three -> 13
 eightwone -> 81  # This is the overlapping case.
 """
 
-FILE_LOC = "./inputs/day1.txt"
+FILE_LOC = r"./inputs/day1.txt"
 
 import re
 
